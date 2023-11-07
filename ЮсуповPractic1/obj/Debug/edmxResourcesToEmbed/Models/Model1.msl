@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище YusupovBDModelContainer" CdmEntityContainer="YusupovBDEntities">
+    <EntitySetMapping Name="User1">
+      <EntityTypeMapping TypeName="YusupovBDModel.User1">
+        <MappingFragment StoreEntitySet="User1">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Furniture">
+      <EntityTypeMapping TypeName="YusupovBDModel.Furniture">
+        <MappingFragment StoreEntitySet="Furniture">
+          <ScalarProperty Name="Quantity_in_stock" ColumnName="Quantity in stock" />
+          <ScalarProperty Name="Style" ColumnName="Style" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
