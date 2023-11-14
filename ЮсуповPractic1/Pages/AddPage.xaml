@@ -13,40 +13,48 @@
             <TextBlock Text="Название"
                        Width="200"
                 FontSize="15"/>
-            <TextBox Text="{Binding Name}"
+            <TextBox x:Name="TBName"
+                Text="{Binding Name}"
                 Width="200"
                 FontSize="15"/>
             <TextBlock Text="Материал"
                        Width="200"
                 FontSize="15"/>
-            <TextBox/>
+            <TextBox x:Name="TBMaterial"
+                     Text="{Binding Material}"
+                     Width="200"
+                     FontSize="15"/>
             <TextBlock Text="Тип"
                        Width="200"
                 FontSize="15"/>
-            <TextBox
+            <TextBox x:Name="TBType"
+                Text= "{Binding Type}"
                 Width="200"
                 FontSize="15"/>
             <TextBlock Text="Стиль"
                        Width="200"
                 FontSize="15"/>
-            <TextBox
+            <TextBox x:Name="TBStyle"
+                Text="{Binding Style}"
                 Width="200"
                 FontSize="15"/>
             <TextBlock Text="Количество"
                        Width="200"
                 FontSize="15"/>
-            <TextBox
+            <TextBox x:Name="TBQuantity_in_stock"
+                Text="{Binding Quantity_in_stock}"
                 Width="200"
                 FontSize="15"/>
             <TextBlock
                 Width="200"
                 FontSize="15"/>
-            <Button
+            <Button x:Name="BAdd"
                 Content="Добавить"
                 Width="200"
                 FontSize="15"
                 Foreground="Aquamarine"
-                Background="Black"/>
+                Background="Black"
+                Click="BAdd_Click"/>
         </StackPanel>
     </Grid>
 </Page>

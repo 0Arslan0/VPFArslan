@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ЮсуповPractic1.Models;
 
 namespace ЮсуповPractic1.Pages
 {
@@ -27,11 +28,20 @@ namespace ЮсуповPractic1.Pages
         }
 
         private void BDelet_Click(object sender, RoutedEventArgs e)
+        
         {
-           
+          var selClient = DGCatalog.SelectedItem as Furniture;
+          if (selClient != null)
+          {
+                App.DB.Furniture.Remove(selClient);
+                App.DB.SaveChanges();
+          }
+           else MessageBox.Show("Ничего не выбрано");
+            DGCatalog.ItemsSource = App.DB.Furniture.ToList();
         }
 
-        private void BAdd_Click(object sender, RoutedEventArgs e)
+
+            private void BAdd_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AddPage());
         }

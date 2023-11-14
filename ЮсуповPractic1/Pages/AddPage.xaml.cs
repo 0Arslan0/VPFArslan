@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ЮсуповPractic1.Models;
 
 namespace ЮсуповPractic1.Pages
 {
@@ -23,6 +24,43 @@ namespace ЮсуповPractic1.Pages
         public AddPage()
         {
             InitializeComponent();
+        }
+
+
+        private void BAdd_Click(object sender, RoutedEventArgs e)
+        {
+            string errormessage = "";
+
+            var user = new Furniture();
+            user.Name = TBName.Text;
+            user.Material = TBMaterial.Text;
+            user.Type = TBType.Text;
+            user.Style = TBStyle.Text;
+            user.Quantity_in_stock = TBQuantity_in_stock.Text;
+            if (string.IsNullOrWhiteSpace(user.Name))
+            {
+                errormessage += "Введите название";
+            }
+            if (string.IsNullOrWhiteSpace(user.Material))
+            {
+                errormessage += "Введите материал";
+            }
+            if (string.IsNullOrWhiteSpace(user.Type))
+            {
+                errormessage += "Введите тип";
+            }
+            if (string.IsNullOrWhiteSpace(user.Style))
+            {
+                errormessage += "Введите стиль";
+            }
+            if (string.IsNullOrWhiteSpace(user.Quantity_in_stock))
+            {
+                errormessage += "Введите количество";
+            }
+            App.DB.Furniture.Add(user);
+            App.DB.SaveChanges();
+            App.DB.Furniture.Remove(user);
+            NavigationService.Navigate(new CatalogPage());
         }
     }
 }
